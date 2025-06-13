@@ -2,12 +2,22 @@
 
 Este projeto demonstra implementações de grafos em Python, permitindo a criação, manipulação e consulta de grafos direcionados ou não direcionados, tanto de forma manual quanto utilizando a biblioteca NetworkX para visualização.
 
+---
+
+## 📄 Destaque: Visualização Passo a Passo da Busca em Profundidade
+
+O arquivo [`GrafoPassoAPasso.pdf`](GrafoPassoAPasso.pdf) contém uma sequência de imagens mostrando cada etapa da busca em profundidade (DFS) em um grafo direcionado, facilitando o entendimento visual do algoritmo.
+
+---
+
 ## Estrutura do Projeto
 
 - [`uso-collections/Grafo.py`](uso-collections/Grafo.py): Contém a classe [`grafo`](uso-collections/Grafo.py), responsável pela estrutura e operações do grafo.
 - [`uso-collections/Aresta.py`](uso-collections/Aresta.py): Exemplo de uso da classe [`grafo`](uso-collections/Grafo.py), criando um grafo direcionado a partir de uma lista de arestas e realizando operações básicas.
 - [`uso-networkx/Grafo.py`](uso-networkx/Grafo.py): Exemplo de criação e visualização de um grafo utilizando a biblioteca NetworkX e Matplotlib, gerando uma imagem do grafo.
+- [`busca-por-profundidade/desenhar-grafo.py`](busca-por-profundidade/desenhar-grafo.py): Implementação da busca em profundidade (DFS) com visualização passo a passo, gerando imagens e um PDF com cada etapa do algoritmo.
 - [`meu_grafo.png`](meu_grafo.png): Imagem gerada pelo script [`uso-networkx/Grafo.py`](uso-networkx/Grafo.py) mostrando a visualização do grafo.
+- [`GrafoPassoAPasso.pdf`](GrafoPassoAPasso.pdf): PDF com as etapas da busca em profundidade.
 - `__pycache__/`: Diretório gerado automaticamente pelo Python para armazenar arquivos compilados.
 
 ## Funcionalidades
@@ -18,6 +28,7 @@ Este projeto demonstra implementações de grafos em Python, permitindo a criaç
 - Verificação da existência de uma aresta entre dois vértices.
 - Representação do grafo por meio de dicionário de adjacências.
 - Visualização gráfica de grafos com NetworkX e Matplotlib.
+- **Visualização passo a passo da busca em profundidade (DFS), com geração de imagens e PDF.**
 
 ## Exemplo de Uso (Implementação Manual)
 
@@ -85,8 +96,28 @@ grafico.savefig("meu_grafo.png", format="png", dpi=300)
 grafico.close()
 ```
 
+## Exemplo de Busca em Profundidade com Visualização Passo a Passo
+
+Veja o arquivo [`busca-por-profundidade/desenhar-grafo.py`](busca-por-profundidade/desenhar-grafo.py) para um exemplo de implementação da busca em profundidade (DFS) com geração de imagens e PDF:
+
+```python
+import matplotlib.pyplot as plt
+import networkx as nx
+from matplotlib.backends.backend_pdf import PdfPages
+
+# ...código para desenhar o grafo e executar a busca em profundidade...
+
+pdf = PdfPages("GrafoPassoAPasso.pdf")
+# O PDF será salvo automaticamente com todas as etapas da busca.
+pdf.close()
+```
+
 ## Visualização Gerada
 
 Abaixo está a imagem gerada pelo script [`uso-networkx/Grafo.py`](uso-networkx/Grafo.py):
 
 ![Visualização do Grafo](meu_grafo.png)
+
+---
+
+**Para ver a execução passo a passo da busca em profundidade, abra o arquivo [`GrafoPassoAPasso.pdf`](GrafoPassoAPasso.pdf)!**
